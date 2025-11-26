@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" 
+            style="-fx-background-color: #f9f9f9;" 
+            xmlns="http://javafx.com/javafx/25" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.sewabaju.controllers.admin.AdminDashboardController">
+   <children>
+      <!-- Top Bar -->
+      <VBox layoutX="0.0" layoutY="0.0" prefHeight="100.0" prefWidth="1100.0" 
+            style="-fx-background-color: #E6B3A8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+               <children>
+                  <!-- Welcome Text -->
+                  <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblWelcome" text="Selamat datang, Admin" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblJabatan" text="Manager" textFill="#FFFFFF99">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Logout Button -->
+                  <Button fx:id="btnLogout" onAction="#handleLogout" 
+                          text="Logout" 
+                          style="-fx-background-color: white; -fx-background-radius: 20;">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetY="3.0" radius="4.5" />
+         </effect>
+      </VBox>
+      
+      <!-- Statistics Cards -->
+      <HBox layoutX="30.0" layoutY="130.0" prefHeight="120.0" prefWidth="1040.0" spacing="20.0">
+         <children>
+            <!-- Card 1: Total Penyewaan -->
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="250.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text text="Penyewaan Hari Ini" textAlignment="CENTER">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblTotalPenyewaanHariIni" text="0" textFill="#2196F3">
+                     <font>
+                        <Font name="Poppins Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+            </VBox>
+            
+            <!-- Card 2: Pendapatan Bulan Ini -->
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="250.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text text="Pendapatan Bulan Ini" textAlignment="CENTER">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblTotalPendapatanBulanIni" text="Rp 0" textFill="#4CAF50">
+                     <font>
+                        <Font name="Poppins Bold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+            </VBox>
+            
+            <!-- Card 3: Jumlah Pelanggan -->
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="250.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text text="Jumlah Pelanggan" textAlignment="CENTER">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblJumlahPelanggan" text="-" textFill="#9C27B0">
+                     <font>
+                        <Font name="Poppins Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+            </VBox>
+            
+            <!-- Card 4: Pembayaran Pending -->
+            <VBox alignment="CENTER" prefHeight="120.0" prefWidth="250.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text text="Pembayaran Pending" textAlignment="CENTER">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblPembayaranPending" text="0" textFill="#FF9800">
+                     <font>
+                        <Font name="Poppins Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+            </VBox>
+         </children>
+      </HBox>
+      
+      <!-- Menu Buttons -->
+      <VBox layoutX="30.0" layoutY="280.0" prefHeight="380.0" prefWidth="500.0" 
+            style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <effect>
+            <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+         </effect>
+         <children>
+            <Text text="Menu Admin" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Poppins Bold" size="18.0" />
+               </font>
+            </Text>
+            
+            <Button fx:id="btnManageKategori" onAction="#handleManageKategori" 
+                    prefHeight="50.0" prefWidth="460.0" 
+                    style="-fx-background-color: #E6B3A8; -fx-background-radius: 10;" 
+                    text="📁  Kelola Kategori">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Button>
+            
+            <Button fx:id="btnManageBaju" onAction="#handleManageBaju" 
+                    prefHeight="50.0" prefWidth="460.0" 
+                    style="-fx-background-color: #E6B3A8; -fx-background-radius: 10;" 
+                    text="👔  Kelola Baju">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Button>
+            
+            <Button fx:id="btnVerifikasiPembayaran" onAction="#handleVerifikasiPembayaran" 
+                    prefHeight="50.0" prefWidth="460.0" 
+                    style="-fx-background-color: #E6B3A8; -fx-background-radius: 10;" 
+                    text="💳  Verifikasi Pembayaran">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Button>
+            
+            <Button fx:id="btnManagePenyewaan" onAction="#handleManagePenyewaan" 
+                    prefHeight="50.0" prefWidth="460.0" 
+                    style="-fx-background-color: #E6B3A8; -fx-background-radius: 10;" 
+                    text="📦  Kelola Penyewaan">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Button>
+            
+            <Button fx:id="btnLaporan" onAction="#handleLaporan" 
+                    prefHeight="50.0" prefWidth="460.0" 
+                    style="-fx-background-color: #E6B3A8; -fx-background-radius: 10;" 
+                    text="📊  Laporan">
+               <font>
+                  <Font name="Poppins SemiBold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      
+      <!-- Activity Lists -->
+      <VBox layoutX="560.0" layoutY="280.0" prefHeight="380.0" prefWidth="510.0" spacing="15.0">
+         <children>
+            <!-- Recent Penyewaan -->
+            <VBox prefHeight="180.0" prefWidth="510.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+               <children>
+                  <Text text="Penyewaan Terbaru" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Poppins Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="listRecentPenyewaan" prefHeight="135.0" prefWidth="480.0" />
+               </children>
+            </VBox>
+            
+            <!-- Pembayaran Pending -->
+            <VBox prefHeight="180.0" prefWidth="510.0" 
+                  style="-fx-background-color: white; -fx-background-radius: 15;" spacing="10.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <effect>
+                  <DropShadow height="8.0" offsetY="2.0" radius="3.5" />
+               </effect>
+               <children>
+                  <Text text="Pembayaran Menunggu Verifikasi" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Poppins Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="listPembayaranPending" prefHeight="135.0" prefWidth="480.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

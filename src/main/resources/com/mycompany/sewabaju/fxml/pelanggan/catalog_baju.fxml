@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.mycompany.sewabaju.controllers.pelanggan.CatalogBajuController"
+           style="-fx-background-color: #f3f3f3;">
+   <children>
+      <BorderPane prefHeight="832.0" prefWidth="1280.0">
+         
+         <!-- LEFT SIDEBAR - Kategori -->
+         <left>
+            <VBox prefWidth="230.0" style="-fx-background-color: white; -fx-border-color: #E0E0E0; -fx-border-width: 0 1 0 0;">
+               <padding>
+                  <Insets top="20.0" bottom="20.0"/>
+               </padding>
+               
+               <!-- Logo di Sidebar -->
+               <HBox alignment="CENTER" VBox.vgrow="NEVER">
+                  <VBox.margin>
+                     <Insets bottom="30.0"/>
+                  </VBox.margin>
+                  <ImageView fitHeight="60.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/logo.png" />
+                     </image>
+                  </ImageView>
+               </HBox>
+               
+               <Label text="Kategori" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                  <font>
+                     <Font name="Poppins SemiBold" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="20.0" bottom="15.0"/>
+                  </VBox.margin>
+               </Label>
+               
+               <!-- Filter Kategori ComboBox -->
+               <ComboBox fx:id="filterKategori" promptText="Semua Kategori" prefWidth="190.0">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="10.0"/>
+                  </VBox.margin>
+               </ComboBox>
+               
+               <Separator>
+                  <VBox.margin>
+                     <Insets top="10.0" bottom="10.0"/>
+                  </VBox.margin>
+               </Separator>
+               
+               <Label text="Ukuran" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                  <font>
+                     <Font name="Poppins SemiBold" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="20.0" bottom="15.0"/>
+                  </VBox.margin>
+               </Label>
+               
+               <!-- Filter Ukuran -->
+               <ComboBox fx:id="filterUkuran" promptText="Semua Ukuran" prefWidth="190.0">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="10.0"/>
+                  </VBox.margin>
+               </ComboBox>
+               
+               <Separator>
+                  <VBox.margin>
+                     <Insets top="10.0" bottom="10.0"/>
+                  </VBox.margin>
+               </Separator>
+               
+               <Label text="Range Harga" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                  <font>
+                     <Font name="Poppins SemiBold" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="20.0" bottom="10.0"/>
+                  </VBox.margin>
+               </Label>
+               
+               <!-- Min Price Slider -->
+               <HBox alignment="CENTER_LEFT" spacing="10.0">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="5.0"/>
+                  </VBox.margin>
+                  <Label text="Min:" style="-fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblMinHarga" text="Rp 0" style="-fx-text-fill: #E6B3A8; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+               </HBox>
+               
+               <Slider fx:id="sliderMinHarga" min="0" max="500000" value="0" showTickLabels="false" showTickMarks="false">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="15.0"/>
+                  </VBox.margin>
+               </Slider>
+               
+               <!-- Max Price Slider -->
+               <HBox alignment="CENTER_LEFT" spacing="10.0">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="5.0"/>
+                  </VBox.margin>
+                  <Label text="Max:" style="-fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblMaxHarga" text="Rp 500,000" style="-fx-text-fill: #E6B3A8; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+               </HBox>
+               
+               <Slider fx:id="sliderMaxHarga" min="0" max="500000" value="500000" showTickLabels="false" showTickMarks="false">
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="20.0"/>
+                  </VBox.margin>
+               </Slider>
+               
+               <!-- Reset Filter Button -->
+               <Button fx:id="btnResetFilter" onAction="#handleResetFilter" text="Reset Filter" 
+                       style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-background-radius: 20; -fx-cursor: hand;">
+                  <font>
+                     <Font name="Poppins Regular" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0"/>
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="8.0" bottom="8.0"/>
+                  </padding>
+               </Button>
+               
+               <Region VBox.vgrow="ALWAYS"/>
+               
+               <!-- Back Button -->
+               <Button fx:id="btnBack" onAction="#handleBack" text="← Kembali" 
+                       style="-fx-background-color: #E9C5CC; -fx-text-fill: #333333; -fx-background-radius: 20; -fx-cursor: hand;">
+                  <font>
+                     <Font name="Poppins SemiBold" size="14.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="20.0" right="20.0" bottom="10.0"/>
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" bottom="10.0"/>
+                  </padding>
+               </Button>
+            </VBox>
+         </left>
+         
+         <!-- CENTER - Catalog Grid -->
+         <center>
+            <VBox spacing="20.0">
+               <padding>
+                  <Insets top="20.0" left="30.0" right="30.0" bottom="20.0"/>
+               </padding>
+               
+               <!-- Search Bar dan Keranjang -->
+               <HBox alignment="CENTER_LEFT" spacing="15.0">
+                  
+                  <!-- Search Icon -->
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/search-icon.png" />
+                     </image>
+                  </ImageView>
+                  
+                  <!-- Search TextField -->
+                  <TextField fx:id="searchField" promptText="Cari baju..." 
+                             style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: #E0E0E0; -fx-border-radius: 25; -fx-border-width: 1.5;"
+                             prefHeight="45.0" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" right="20.0"/>
+                     </padding>
+                  </TextField>
+                  
+                  <!-- Search Button -->
+                  <Button fx:id="btnSearch" onAction="#handleSearch" text="Cari" 
+                          style="-fx-background-color: #E6B3A8; -fx-text-fill: white; -fx-background-radius: 25; -fx-cursor: hand;">
+                     <font>
+                        <Font name="Poppins SemiBold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" right="25.0" top="10.0" bottom="10.0"/>
+                     </padding>
+                  </Button>
+                  
+                  <!-- Keranjang Button -->
+                  <Button fx:id="btnKeranjang" onAction="#handleKeranjang" 
+                          style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 25; -fx-cursor: hand;">
+                     <graphic>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <Label text="🛒" style="-fx-text-fill: white;">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                           <Label text="Keranjang" style="-fx-text-fill: white;">
+                              <font>
+                                 <Font name="Poppins SemiBold" size="14.0" />
+                              </font>
+                           </Label>
+                           <!-- Cart Count Badge -->
+                           <Label fx:id="lblCartCount" text="0" visible="false"
+                                  style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 2 8;">
+                              <font>
+                                 <Font name="Poppins Bold" size="11.0" />
+                              </font>
+                           </Label>
+                        </HBox>
+                     </graphic>
+                     <padding>
+                        <Insets left="15.0" right="15.0" top="10.0" bottom="10.0"/>
+                     </padding>
+                  </Button>
+                  
+               </HBox>
+               
+               <!-- Title and Result Count -->
+               <HBox alignment="CENTER_LEFT" spacing="15.0">
+                  <Label text="Pilihan Baju untuk Anda" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="Poppins Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  
+                  <Region HBox.hgrow="ALWAYS"/>
+                  
+                  <Label fx:id="lblResultCount" text="Menampilkan 0 baju" style="-fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </HBox>
+               
+               <!-- Catalog Grid dalam ScrollPane -->
+               <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" 
+                           VBox.vgrow="ALWAYS" hbarPolicy="NEVER">
+                  <content>
+                     <GridPane fx:id="gridCatalog" hgap="20.0" vgap="20.0">
+                        <padding>
+                           <Insets top="10.0" bottom="10.0"/>
+                        </padding>
+                     </GridPane>
+                  </content>
+               </ScrollPane>
+               
+            </VBox>
+         </center>
+         
+      </BorderPane>
+   </children>
+</StackPane>

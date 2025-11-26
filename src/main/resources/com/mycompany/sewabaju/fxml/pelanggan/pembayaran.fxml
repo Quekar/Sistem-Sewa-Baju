@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.sewabaju.controllers.PembayaranController"
+            style="-fx-background-color:#f3f3f3;">
+
+    <children>
+
+        <!-- ========================= HEADER ========================= -->
+        <HBox spacing="15" padding="20"
+              style="-fx-background-color:white; -fx-effect:dropshadow(gaussian, #00000033, 10,0,0,2);"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+            <ImageView fitHeight="80" fitWidth="140" preserveRatio="true">
+                <image><Image url="@../images/logopbo.png"/></image>
+            </ImageView>
+
+            <Text text="Pembayaran" fill="#1d4e53">
+                <font><Font name="Poppins Bold" size="26"/></font>
+            </Text>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <!-- ============================================================ -->
+        <!--                     KONTEN UTAMA                             -->
+        <!-- ============================================================ -->
+
+        <HBox spacing="30" padding="20"
+              AnchorPane.topAnchor="120" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+            <!-- ========================================================= -->
+            <!--                    RINGKASAN SEWA                          -->
+            <!-- ========================================================= -->
+
+            <VBox spacing="20" prefWidth="550" style="-fx-background-color:white; -fx-background-radius:20;"
+                  padding="25">
+
+                <Text text="Detail Sewa" fill="#1d4e53">
+                    <font><Font name="Poppins Bold" size="22"/></font>
+                </Text>
+
+                <HBox spacing="20">
+
+                    <!-- Gambar Baju -->
+                    <ImageView fx:id="imgBaju" fitHeight="250" fitWidth="180" preserveRatio="true">
+                        <image><Image url="@../images/merahpanjang.png"/></image>
+                    </ImageView>
+
+                    <!-- Informasi Sewa -->
+                    <VBox spacing="10">
+
+                        <Label fx:id="lblNamaBaju" text="Nama Baju" textFill="#1d4e53">
+                            <font><Font name="Poppins Bold" size="18"/></font>
+                        </Label>
+
+                        <ComboBox fx:id="cbUkuran" prefWidth="220" promptText="Pilih Ukuran"/>
+                        <ComboBox fx:id="cbJumlah" prefWidth="220" promptText="Jumlah Item"/>
+
+                        <HBox spacing="20">
+                            <VBox spacing="5">
+                                <Label text="Tanggal Pinjam"/>
+                                <DatePicker fx:id="dpPinjam" prefWidth="180"/>
+                            </VBox>
+
+                            <VBox spacing="5">
+                                <Label text="Tanggal Kembali"/>
+                                <DatePicker fx:id="dpKembali" prefWidth="180"/>
+                            </VBox>
+                        </HBox>
+
+                        <Label fx:id="lblLamaSewa" text="Lama Sewa : - hari"/>
+                        <Label fx:id="lblHargaPerHari" text="Harga per hari : Rp -"/>
+                        <Label fx:id="lblTotalHarga" text="Total Harga : Rp -" textFill="#d78371">
+                            <font><Font name="Poppins Bold" size="20"/></font>
+                        </Label>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+
+            <!-- ========================================================= -->
+            <!--                FORM PEMBAYARAN (KANAN)                    -->
+            <!-- ========================================================= -->
+
+            <VBox spacing="20" prefWidth="500" style="-fx-background-color:white; -fx-background-radius:20;"
+                  padding="25">
+
+                <Text text="Metode Pembayaran" fill="#1d4e53">
+                    <font><Font name="Poppins Bold" size="22"/></font>
+                </Text>
+
+                <ComboBox fx:id="cbMetode" prefWidth="300" promptText="Pilih Metode Pembayaran"/>
+
+                <VBox spacing="5">
+                    <Label text="Upload Bukti Pembayaran"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="txtBukti" prefWidth="250" editable="false"/>
+                        <Button fx:id="btnUpload" text="Upload"/>
+                    </HBox>
+                </VBox>
+
+                <Separator/>
+
+                <Label fx:id="lblTotalPembayaran" text="Total Dibayar : Rp -" textFill="#d78371">
+                    <font><Font name="Poppins Bold" size="22"/></font>
+                </Label>
+
+                <Button fx:id="btnKonfirmasiPembayaran"
+                        text="Bayar Sekarang"
+                        prefWidth="300" prefHeight="55"
+                        style="-fx-background-color:#E6B3A8; -fx-background-radius:20;">
+                    <font><Font name="Poppins Bold" size="18"/></font>
+                </Button>
+
+                <Button fx:id="btnBatal" text="Batal"
+                        prefWidth="300" prefHeight="45"
+                        style="-fx-background-color:#d8d8d8; -fx-background-radius:15;">
+                    <font><Font name="Poppins Regular" size="16"/></font>
+                </Button>
+
+            </VBox>
+        </HBox>
+    </children>
+
+</AnchorPane>

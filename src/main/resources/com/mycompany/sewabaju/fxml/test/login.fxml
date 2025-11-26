@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane alignment="CENTER" style="-fx-background-color: #f3f3f3;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.pboaplikasi.controllers.LoginController">
+   <children>
+      <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="832.0" minWidth="1280.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: f3f3f3;" StackPane.alignment="CENTER">
+
+         <children>
+            <Text layoutX="417.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="420.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font></Text>
+            <Text layoutX="536.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back !">
+               <font>
+                  <Font name="Poppins Regular" size="29.0" />
+               </font>
+            </Text>
+            <TextField layoutX="415.0" layoutY="498.0" prefHeight="47.0" prefWidth="458.0" promptText="Password">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="198.0" fitWidth="298.0" layoutX="470.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" x="-5.0" y="-15.0">
+               <image>
+                  <Image url="@../images/logopbo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="527.0" layoutY="608.0" mnemonicParsing="false" onMouseClicked="#handleBeranda" prefHeight="78.0" prefWidth="211.0" style="-fx-background-color: E6B3A8; -fx-background-radius: 50;" text="LOGIN">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+            <Text layoutX="542.0" layoutY="712.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t have account?">
+               <font>
+                  <Font name="Poppins Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#d78371" layoutX="674.0" layoutY="712.0" onMouseClicked="#handleSignUp" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+               <font>
+                  <Font name="Poppins Regular" size="12.0" />
+               </font>
+            </Text>
+            <TextField layoutX="413.0" layoutY="390.0" prefHeight="47.0" prefWidth="458.0" promptText="Password">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

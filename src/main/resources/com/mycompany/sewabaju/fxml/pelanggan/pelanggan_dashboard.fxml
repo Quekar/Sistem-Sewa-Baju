@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.mycompany.sewabaju.controllers.pelanggan.PelangganDashboardController"
+           style="-fx-background-color: #f3f3f3;">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="832.0" minWidth="1280.0" 
+                  prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #f3f3f3;">
+         <children>
+            
+            <!-- Header Bar -->
+            <VBox prefHeight="120.0" prefWidth="1280.0" style="-fx-background-color: white;" 
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow color="#00000033" radius="10" offsetY="2"/>
+               </effect>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="120.0" spacing="20.0">
+                     <padding>
+                        <Insets left="30.0" right="30.0"/>
+                     </padding>
+                     
+                     <!-- Logo -->
+                     <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../images/logo.png" />
+                        </image>
+                     </ImageView>
+                     
+                     <Region HBox.hgrow="ALWAYS"/>
+                     
+                     <!-- Poin Loyalitas -->
+                     <VBox alignment="CENTER_RIGHT" spacing="5.0">
+                        <Label text="Poin Loyalitas" style="-fx-text-fill: #666666;">
+                           <font>
+                              <Font name="Poppins Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblPoinLoyalitas" text="0 Poin" style="-fx-text-fill: #E6B3A8; -fx-font-weight: bold;">
+                           <font>
+                              <Font name="Poppins Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </VBox>
+                     
+                     <!-- Profile Icon -->
+                     <Button onAction="#handleProfile" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                           <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../images/user-icon.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     
+                     <!-- Logout Button -->
+                     <Button fx:id="btnLogout" onAction="#handleLogout" text="Logout" 
+                             style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-background-radius: 20; -fx-cursor: hand;">
+                        <font>
+                           <Font name="Poppins SemiBold" size="14.0" />
+                        </font>
+                        <padding>
+                           <Insets left="20.0" right="20.0" top="10.0" bottom="10.0"/>
+                        </padding>
+                     </Button>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Welcome Message -->
+            <VBox alignment="CENTER" layoutX="300.0" layoutY="150.0" spacing="10.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
+               <Label fx:id="lblWelcome" text="Selamat Datang Kembali, User" textAlignment="CENTER" wrapText="true"
+                      style="-fx-text-fill: #1d4e53;">
+                  <font>
+                     <Font name="Poppins Bold" size="32.0" />
+                  </font>
+               </Label>
+               <Label text="Temukan dan sewa baju impian Anda" textAlignment="CENTER" style="-fx-text-fill: #666666;">
+                  <font>
+                     <Font name="Poppins Regular" size="16.0" />
+                  </font>
+               </Label>
+            </VBox>
+            
+            <!-- Statistics Cards -->
+            <HBox alignment="CENTER" layoutY="250.0" spacing="30.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+               
+               <!-- Total Penyewaan Card -->
+               <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;">
+                  <effect>
+                     <DropShadow color="#00000022" radius="8" offsetY="2"/>
+                  </effect>
+                  <Label text="Total Penyewaan" style="-fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotalPenyewaan" text="0" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="Poppins Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               
+               <!-- Penyewaan Aktif Card -->
+               <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;">
+                  <effect>
+                     <DropShadow color="#00000022" radius="8" offsetY="2"/>
+                  </effect>
+                  <Label text="Sedang Disewa" style="-fx-text-fill: #666666;">
+                     <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPenyewaanAktif" text="0" style="-fx-text-fill: #E6B3A8; -fx-font-weight: bold;">
+                     <font>
+                        <Font name="Poppins Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               
+            </HBox>
+            
+            <!-- Main Menu Grid -->
+            <GridPane layoutY="380.0" hgap="40.0" vgap="40.0" alignment="CENTER" 
+                      AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
+               
+               <!-- Menu 1: Catalog Baju -->
+               <VBox alignment="CENTER" spacing="15.0" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                     style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 30; -fx-cursor: hand;"
+                     onMouseClicked="#handleCatalog">
+                  <effect>
+                     <DropShadow color="#00000022" radius="10" offsetY="3"/>
+                  </effect>
+                  
+                  <ImageView fitHeight="180.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/kategori.png" />
+                     </image>
+                  </ImageView>
+                  
+                  <Button fx:id="btnCatalog" onAction="#handleCatalog" text="Catalog Baju" 
+                          style="-fx-background-color: #E9C5CC; -fx-text-fill: #333333; -fx-background-radius: 25; -fx-cursor: hand;"
+                          prefWidth="200.0" prefHeight="50.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="18.0" />
+                     </font>
+                  </Button>
+               </VBox>
+               
+               <!-- Menu 2: Riwayat Sewa -->
+               <VBox alignment="CENTER" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                     style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 30; -fx-cursor: hand;"
+                     onMouseClicked="#handleRiwayatSewa">
+                  <effect>
+                     <DropShadow color="#00000022" radius="10" offsetY="3"/>
+                  </effect>
+                  
+                  <ImageView fitHeight="180.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/sewa.png" />
+                     </image>
+                  </ImageView>
+                  
+                  <Button fx:id="btnRiwayatSewa" onAction="#handleRiwayatSewa" text="Riwayat Penyewaan" 
+                          style="-fx-background-color: #E9C5CC; -fx-text-fill: #333333; -fx-background-radius: 25; -fx-cursor: hand;"
+                          prefWidth="200.0" prefHeight="50.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="18.0" />
+                     </font>
+                  </Button>
+               </VBox>
+               
+               <!-- Menu 3: Keranjang -->
+               <VBox alignment="CENTER" spacing="15.0" GridPane.columnIndex="2" GridPane.rowIndex="0"
+                     style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 30; -fx-cursor: hand;"
+                     onMouseClicked="#handleKeranjang">
+                  <effect>
+                     <DropShadow color="#00000022" radius="10" offsetY="3"/>
+                  </effect>
+                  
+                  <ImageView fitHeight="180.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/pengembalian.png" />
+                     </image>
+                  </ImageView>
+                  
+                  <Button fx:id="btnKeranjang" onAction="#handleKeranjang" text="Keranjang" 
+                          style="-fx-background-color: #E9C5CC; -fx-text-fill: #333333; -fx-background-radius: 25; -fx-cursor: hand;"
+                          prefWidth="200.0" prefHeight="50.0">
+                     <font>
+                        <Font name="Poppins SemiBold" size="18.0" />
+                     </font>
+                  </Button>
+               </VBox>
+               
+            </GridPane>
+            
+            <!-- Recent Activity Section -->
+            <VBox layoutY="700.0" spacing="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.bottomAnchor="50.0">
+               <Label text="Aktivitas Terbaru" style="-fx-text-fill: #1d4e53; -fx-font-weight: bold;">
+                  <font>
+                     <Font name="Poppins SemiBold" size="18.0" />
+                  </font>
+               </Label>
+               
+               <ListView fx:id="listPenyewaanAktif" prefHeight="100.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                  <padding>
+                     <Insets top="5.0" bottom="5.0" left="10.0" right="10.0"/>
+                  </padding>
+               </ListView>
+            </VBox>
+            
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

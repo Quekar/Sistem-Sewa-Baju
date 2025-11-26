@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.pboaplikasi.controllers.BerandaController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="832.0" minWidth="1280.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles.css">
+         <children>
+            <VBox prefHeight="121.0" prefWidth="1331.0" style="-fx-background-color: f3f3f3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+            <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="1160.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/orang.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="253.0" layoutX="30.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logopbo.png" />
+               </image>
+            </ImageView>
+            <Text fill="#1d4e53" layoutX="358.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat Datang Kembali, User" textAlignment="CENTER" wrappingWidth="526.4999694824219">
+               <font>
+                  <Font name="Poppins Bold" size="32.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="435.0" fitWidth="395.0" layoutX="55.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/kategori.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="435.0" fitWidth="395.0" layoutX="450.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/sewa.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="435.0" fitWidth="395.0" layoutX="850.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pengembalian.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="123.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#handleKategori" prefHeight="53.0" prefWidth="198.0" style="-fx-background-color: E9C5CC;" text="Kategori">
+               <font>
+                  <Font name="Poppins Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="510.0" layoutY="617.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="238.0" style="-fx-background-color: E9C5CC;" text="Riwayat Penyewaan">
+               <font>
+                  <Font name="Poppins Regular" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="930.0" layoutY="616.0" mnemonicParsing="false" onMouseClicked="#handlePengembalian" prefHeight="53.0" prefWidth="198.0" style="-fx-background-color: E9C5CC;" text="Pengembalian">
+               <font>
+                  <Font name="Poppins Regular" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.pboaplikasi.controllers.TampilanController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="832.0" minWidth="1280.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="-5.0" layoutY="-7.0" prefHeight="684.0" prefWidth="226.0" style="-fx-background-color: f3f3f3;" AnchorPane.bottomAnchor="188.8" AnchorPane.rightAnchor="1059.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox layoutX="10.0" layoutY="130.0" opacity="0.46" prefHeight="78.0" prefWidth="226.0" style="-fx-background-color: f3f3f3;">
+                     <children>
+                        <VBox fillWidth="false" maxWidth="25.0" prefHeight="78.0" prefWidth="78.0" style="-fx-background-color: f3f3f3;" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Button layoutY="121.0" mnemonicParsing="false" onMouseClicked="#handleKategori" prefHeight="91.0" prefWidth="222.0" style="-fx-background-color: E5B3A7;" text="Kebaya" textFill="#1d4e53" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <VBox prefHeight="121.0" prefWidth="1331.0" style="-fx-background-color: f3f3f3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+            <ImageView fitHeight="94.0" fitWidth="94.0" layoutX="1160.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/orang.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="64.0" layoutX="370.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/searchicon.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="438.0" layoutY="30.0" prefHeight="62.0" prefWidth="531.0" promptText="Cari..." style="-fx-background-radius: 20;">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="99.0" fitWidth="253.0" layoutX="30.0" layoutY="12.0" onMouseClicked="#handleBeranda" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logopbo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="-5.0" layoutY="208.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="226.0" style="-fx-background-color: f3f3f3;" text="Gaun" textFill="#1d4e53" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="-11.0" layoutY="298.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="234.0" style="-fx-background-color: f3f3f3;" text="Jas" textFill="#1d4e53" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="-1.0" layoutY="372.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="224.0" style="-fx-background-color: f3f3f3;" text="Baju Adat" textFill="#1d4e53" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="-11.0" layoutY="447.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="235.0" style="-fx-background-color: f3f3f3;" text="Baju Pengantin" textFill="#1d4e53" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="-1.0" layoutY="536.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="223.0" style="-fx-background-color: f3f3f3;" text="Anak-Anak" textFill="#1d4e53" AnchorPane.bottomAnchor="188.8" AnchorPane.rightAnchor="1059.4">
+               <font>
+                  <Font name="Poppins Regular" size="20.0" />
+               </font>
+            </Button>
+            <VBox layoutX="258.0" layoutY="195.0" prefHeight="454.0" prefWidth="982.0" style="-fx-background-color: f3f3f3; -fx-background-radius: 20;" />
+            <ImageView fitHeight="396.0" fitWidth="375.0" layoutX="284.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/kebaya%20merah.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="686.0" layoutY="240.0" prefHeight="54.0" prefWidth="322.0" text="Kebaya Merah Bordir">
+               <font>
+                  <Font name="Poppins Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="685.0" layoutY="282.0" prefHeight="59.0" prefWidth="333.0" text="Stok : 5">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="687.0" layoutY="322.0" prefHeight="47.0" prefWidth="188.0" text="Ukuran : S/M/L ">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="687.0" layoutY="353.0" prefHeight="59.0" prefWidth="242.0" text="Bahan : Tile Premium">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="689.0" layoutY="397.0" prefHeight="47.0" prefWidth="250.0" text="Status : Tersedia">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="688.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#handlePop" prefHeight="74.0" prefWidth="223.0" style="-fx-background-color: E5B3A7;" text="Sewa">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Button>
+            <Label layoutX="689.0" layoutY="431.0" prefHeight="56.0" prefWidth="340.0" text="Harga Sewa Per Hari : 150.000">
+               <font>
+                  <Font name="Poppins Regular" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
